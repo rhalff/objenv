@@ -21,7 +21,7 @@ const envEnrichedObject = objenv(obj, {prefix: 'psichi'})
 
 ## objenv(obj, [options], [matchFn])
 
-Will traverse `obj` and test whether an environment variable is set to replace it's value.
+Will [traverse](https://github.com/substack/js-traverse) `obj` and test whether an environment variable is set to replace it's value.
 
 `matchFn(key, newValue)` can be used to execute a function whenever a value is replaced.
 This is can be useful to report about the environment override.
