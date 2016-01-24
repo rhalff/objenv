@@ -1,6 +1,6 @@
 var traverse = require('traverse')
 
-function objenv(obj, options, matchFn) {
+function objenv (obj, options, matchFn) {
   if (typeof options === 'function') {
     matchFn = options
     options = {}
