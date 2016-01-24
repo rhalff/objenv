@@ -89,3 +89,6 @@ $ MYORG_DATABASE_HOST=0.0.0.0 node script.js
 { "database": { "host": "0.0.0.0", "port": "8000"} }
 ```
 
+Similar modules:
+
+ - https://github.com/colinmacdonald/node-env-json
