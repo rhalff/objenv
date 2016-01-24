@@ -26,9 +26,9 @@ Will [traverse](https://github.com/substack/js-traverse) `obj` and test whether 
 `matchFn(key, newValue)` can be used to execute a function whenever a value is replaced.
 This is can be useful to report about the environment override.
 
-If you return false from `matchFn` the value will not be overwritten.
+If you return `false` from `matchFn` the value will not be overwritten.
 
-Available `options` options are:
+Available `options` are:
 - options.prefix: defaults to none.
 - options.seperator: defaults to '_'
 
@@ -51,7 +51,7 @@ const config = {
 
 The initial object defines what values can be set.
 
-Occording to the above the following environment variables will be considered:
+According to the above the following environment variables will be considered:
 
 ```bash
 DATABASE_HOST
