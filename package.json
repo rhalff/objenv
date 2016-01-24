@@ -1,0 +1,28 @@
+{
+  "name": "objenv",
+  "version": "1.0.0",
+  "description": "Override JSON with environment variables",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rhalff/objenv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rhalff/objenv/issues"
+  },
+  "homepage": "https://github.com/rhalff/objenv",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard -v | snazzy && tape test/*.js | tap-spec"
+  },
+  "author": "Rob Halff",
+  "license": "MIT",
+  "dependencies": {
+    "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
+  }
+}
