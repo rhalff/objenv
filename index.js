@@ -10,10 +10,17 @@ function objenv (obj, options, matchFn) {
   var prefix = options && options.prefix || null
 
   traverse(obj).forEach(function (v) {
-    var path, key
+    var key
     if (this.isLeaf) {
-      path = prefix ? [prefix].concat(this.path) : this.path
-      key = path.join(sep).toUpperCase()
+      key = this.path.join(sep)
+      if (options.camelCase) {
+        key = key.replace(/[A-Z]+/g, function (match) {
+          return '_' + match
+        })
+      }
+      key = key.toUpperCase()
+      key = prefix ? prefix + '_' + key : key
+
       if (process.env[key]) {
         if (!matchFn || matchFn(key, process.env[key]) !== false) {
           this.update(process.env[key])

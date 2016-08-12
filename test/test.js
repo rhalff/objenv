@@ -16,10 +16,10 @@ tests.forEach((name) => {
     Object.keys(fixture.env).forEach((name) => {
       process.env[name] = fixture.env[name]
     })
-
     result = objenv(fixture.orig, {
       prefix: fixture.prefix,
-      seperator: fixture.seperator || '_'
+      seperator: fixture.seperator || '_',
+      camelCase: fixture.camelCase
     }, (match, value) => {
       if (debug) {
         console.log('Replaced %s with %s', match, value)
