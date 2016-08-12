@@ -1,5 +1,11 @@
 var traverse = require('traverse')
 
+function decamelize (str) {
+  return str.replace(/[A-Z]+/g, function (match) {
+    return '_' + match
+  })
+}
+
 function objenv (obj, options, matchFn) {
   if (typeof options === 'function') {
     matchFn = options
@@ -8,26 +14,32 @@ function objenv (obj, options, matchFn) {
   if (!options) options = {}
   var sep = options && options.seperator || '_'
   var prefix = options && options.prefix || null
+  var report = options && options.mode === 'report'
 
-  traverse(obj).forEach(function (v) {
+  function doIt (v) {
     var key
     if (this.isLeaf) {
       key = this.path.join(sep)
       if (options.camelCase) {
-        key = key.replace(/[A-Z]+/g, function (match) {
-          return '_' + match
-        })
+        key = decamelize(key)
       }
-      key = key.toUpperCase()
       key = prefix ? prefix + '_' + key : key
+      key = key.toUpperCase()
 
-      if (process.env[key]) {
+      if (report) {
+        if (matchFn) {
+          matchFn(key, v, process.env[key])
+        }
+      } else if (process.env[key]) {
         if (!matchFn || matchFn(key, process.env[key]) !== false) {
           this.update(process.env[key])
         }
       }
     }
-  })
+  }
+
+  traverse(obj).forEach(doIt)
+
   return obj
 }
 

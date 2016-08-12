@@ -11,6 +11,7 @@
   },
   "homepage": "https://github.com/rhalff/objenv",
   "main": "index.js",
+  "bin": "./bin/objenv",
   "scripts": {
     "lint": "standard -v | snazzy",
     "test": "npm run lint && tape test/*.js | tap-spec"
@@ -18,6 +19,7 @@
   "author": "Rob Halff",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.9.0",
     "traverse": "^0.6.6"
   },
   "devDependencies": {
