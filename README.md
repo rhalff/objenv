@@ -40,7 +40,7 @@ objenv alters `obj` in place, if this is not desired create a copy of the object
 
 The `camelCase` option will expand camelcased keys using the seperator.
 
-e.g. a key named `databaseName` can be overruled using a DATABASE_NAME environment variable.
+e.g. a key named `databaseName` can be overruled using a `DATABASE_NAME` environment variable.
 
 ## Example Usage
 
