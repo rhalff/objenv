@@ -1,6 +1,7 @@
 var program = require('commander')
 var pkg = require('./package')
 var objenv = require('./index')
+var path = require('path')
 
 program
 .version(pkg.version)
@@ -14,6 +15,7 @@ program
 var file = program.args[0]
 
 if (file) {
+  file = path.isAbsolute(file[0]) ? file : path.join(process.cwd(), file)
   var config = require(file)
   objenv(config, {
     camelCase: program.camelCase,
