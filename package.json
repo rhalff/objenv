@@ -18,14 +18,18 @@
   },
   "author": "Rob Halff",
   "license": "MIT",
+  "peerDependencies": {
+    "ts-node": "^5.0.1",
+    "typescript": "^2.7.2"
+  },
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^2.15.0",
     "traverse": "^0.6.6"
   },
   "devDependencies": {
-    "snazzy": "^4.0.1",
-    "standard": "^7.1.2",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.0",
     "tap-spec": "^4.1.1",
-    "tape": "^4.6.0"
+    "tape": "^4.9.0"
   }
 }

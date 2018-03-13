@@ -16,7 +16,13 @@ var file = program.args[0]
 
 if (file) {
   file = path.isAbsolute(file[0]) ? file : path.join(process.cwd(), file)
+  var extension = path.extname(file)
   var config = require(file)
+
+  if (extension === '.ts') {
+    config = config[Object.keys(config)[0]]
+  }
+
   objenv(config, {
     camelCase: program.camelCase,
     prefix: program.prefix,
