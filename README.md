@@ -16,10 +16,13 @@ npm install objenv --save
 
 Quick usage example:
 ```javascript
-const envEnrichedObject = objenv(obj, {prefix: 'psichi'})
+// import objenv from 'objenv'
+import {objEnv} from 'objenv'
+
+const envEnrichedObject = objEnv(obj, {prefix: 'psichi'})
 ```
 
-## objenv(obj, [options], [matchFn])
+## objEnv(obj, [options], [matchFn])
 
 Will [traverse](https://github.com/substack/js-traverse) `obj` and test whether an environment variable is set to replace it's value.
 
@@ -30,7 +33,7 @@ If you return `false` from `matchFn` the value will not be overwritten.
 
 Available `options` are:
 - options.prefix: defaults to none.
-- options.seperator: defaults to '_'
+- options.separator: defaults to '_'
 - options.camelCase: defaults to false
 
 Both `options` and `matchFn` are optional, if `options` are omitted,
@@ -38,7 +41,7 @@ the `matchFn` will be the second argument.
 
 objenv alters `obj` in place, if this is not desired create a copy of the object first.
 
-The `camelCase` option will expand camelcased keys using the seperator.
+The `camelCase` option will expand camelCased keys using the separator.
 
 e.g. a key named `databaseName` can be overruled using a `DATABASE_NAME` environment variable.
 
@@ -74,7 +77,7 @@ MYORG_DATABASE_PORT
 Script:
 ```javascript
 
-const objenv = require('objenv');
+import objenv from 'objenv'
 
 const options = {
   prefix: 'myorg',

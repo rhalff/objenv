@@ -10,26 +10,38 @@
     "url": "https://github.com/rhalff/objenv/issues"
   },
   "homepage": "https://github.com/rhalff/objenv",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "bin": "./bin/objenv",
   "scripts": {
-    "lint": "standard -v | snazzy",
-    "test": "npm run lint && tape test/*.js | tap-spec"
+    "clean": "rimraf lib/",
+    "lint": "tslint {test,src}/**/*.ts --fix",
+    "test": "npm run lint && ts-node ./node_modules/.bin/tape test/*.ts | tap-spec",
+    "prepare": "npm run clean && tsc"
   },
   "author": "Rob Halff",
   "license": "MIT",
-  "peerDependencies": {
-    "ts-node": "^5.0.1",
-    "typescript": "^2.7.2"
-  },
   "dependencies": {
-    "commander": "^2.15.0",
+    "commander": "^4.0.1",
     "traverse": "^0.6.6"
   },
   "devDependencies": {
-    "snazzy": "^7.1.1",
-    "standard": "^11.0.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.9.0"
+    "@types/commander": "^2.12.2",
+    "@types/node": "^13.1.1",
+    "@types/rimraf": "^2.0.3",
+    "@types/tape": "^4.2.33",
+    "@types/traverse": "^0.6.32",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.12.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.4"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "lib/",
+    "rootDir": "src/",
+    "target": "es5",
+    "downlevelIteration": true,
+
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "typeRoots": ["node_modules/@types", "typings", "types"],
+    "lib": ["es2017", "es7"]
+  }
+}

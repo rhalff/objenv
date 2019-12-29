@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "rules": {
+    "prettier": true,
+    "interface-name": false,
+    "variable-name": false,
+    "no-console": false,
+    "no-var-requires": false,
+    "interface-over-type-literal": false,
+    "no-object-literal-type-assertion": false,
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-empty": false,
+    "no-namespace": false,
+    "no-empty-interface": false
+  },
+  "exclude": [
+    "node_modules/",
+    "/lib/",
+    "assets/",
+    "dist/",
+    "build/"
+  ]
+}

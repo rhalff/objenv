@@ -1,5 +1,6 @@
 *.swp
 *.txt
 node_modules/
+lib/
 .c9/
 .idea/
