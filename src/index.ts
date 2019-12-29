@@ -22,7 +22,7 @@ export default objEnv
 export function objEnv(
   obj: object,
   options: ObjEnvOptions = {},
-  matchFn: MatchFunction
+  matchFn?: MatchFunction
 ) {
   if (typeof options === 'function') {
     matchFn = options
