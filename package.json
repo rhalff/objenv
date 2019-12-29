@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rimraf lib/",
     "lint": "tslint src/**/*.ts test/**/*.ts --fix",
-    "test": "npm run lint && ts-node ./node_modules/.bin/tape test/*.ts | tap-spec",
+    "test": "ts-node ./node_modules/.bin/tape test/*.ts | tap-spec",
     "prepare": "npm run clean && tsc"
   },
   "author": "Rob Halff",
