@@ -20,11 +20,8 @@
     "no-namespace": false,
     "no-empty-interface": false
   },
-  "exclude": [
-    "node_modules/",
-    "/lib/",
-    "assets/",
-    "dist/",
-    "build/"
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
   ]
 }
