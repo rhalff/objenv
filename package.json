@@ -15,7 +15,7 @@
   "bin": "./bin/objenv",
   "scripts": {
     "clean": "rimraf lib/",
-    "lint": "tslint {test,src}/**/*.ts --fix",
+    "lint": "tslint '{test,src}/**/*.ts' --fix",
     "test": "npm run lint && ts-node ./node_modules/.bin/tape test/*.ts | tap-spec",
     "prepare": "npm run clean && tsc"
   },
