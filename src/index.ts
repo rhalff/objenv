@@ -19,11 +19,11 @@ const decamelize = (str: string) =>
 
 export default objEnv
 
-export function objEnv(
-  obj: object,
+export function objEnv<T = any>(
+  obj: T,
   options: ObjEnvOptions = {},
   matchFn?: MatchFunction
-) {
+): T {
   if (typeof options === 'function') {
     matchFn = options
     options = {}
