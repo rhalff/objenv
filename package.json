@@ -1,6 +1,6 @@
 {
   "name": "objenv",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Override JSON with environment variables",
   "repository": {
     "type": "git",
